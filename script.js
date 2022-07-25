@@ -4,10 +4,10 @@ operationButtons = document.querySelectorAll('.operations'),
 equalsButton = document.querySelector('#equals'),
 clearButton = document.querySelector('#clear');
 
-let firstNumber = 0,
-secondNumber = 0,
-outcome = 0,
-result = 0,
+let firstNumber = null,
+secondNumber = null,
+outcome = null,
+result = null,
 operationChoice = "";
 
 function add(x, y) {
@@ -25,7 +25,6 @@ function divide (x, y) {
 function displayPopulation(value) {    
     return displayArea.innerHTML += value;
 }
-
 function operate(operationChoice, firstNumber, secondNumber) {
     switch (operationChoice) {
         case "add":
@@ -55,18 +54,16 @@ numberButtons.forEach((button) => {
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
         firstNumber = parseInt(displayArea.innerText, 10);
-        console.log(firstNumber);
         displayArea.innerHTML = "";
         operationChoice = button.id;
-        console.log(operationChoice);
+        // result = operate(operationChoice, firstNumber, secondNumber);  
+        // displayArea.innerHTML = result;
     });
 });
 
 equalsButton.addEventListener('click', () => {
     secondNumber = parseInt(displayArea.innerText, 10);
-    console.log(secondNumber);  
     result = operate(operationChoice, firstNumber, secondNumber);  
-    console.log(result);
     displayArea.innerHTML = result;
 });
 
