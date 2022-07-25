@@ -56,8 +56,6 @@ operationButtons.forEach((button) => {
         firstNumber = parseInt(displayArea.innerText, 10);
         displayArea.innerHTML = "";
         operationChoice = button.id;
-        // result = operate(operationChoice, firstNumber, secondNumber);  
-        // displayArea.innerHTML = result;
     });
 });
 
@@ -68,6 +66,6 @@ equalsButton.addEventListener('click', () => {
 });
 
 clearButton.addEventListener('click', () => {
-    firstNumber = 0; secondNumber = 0; outcome = 0;
-    result = 0; operationChoice = ""; displayArea.innerHTML = "";
+    firstNumber = null; secondNumber = null; outcome = null;
+    result = null; operationChoice = ""; displayArea.innerHTML = "";
 });
