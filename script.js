@@ -8,31 +8,38 @@ let firstNumber = null,
 secondNumber = null,
 outcome = null,
 result = null,
-displayCorrection = true,
-operationChoice = "";
+operationChoice = "",
+displayValue = "";
 
 function add(x, y) {
     outcome = x + y;
-    firstNumber = outcome; secondNumber = null;
     return outcome
 }
 function substract(x, y) {
     outcome = x - y;
-    firstNumber = outcome; secondNumber = null;
     return outcome
 }
 function multiply(x, y) {
     outcome = x * y;
-    firstNumber = outcome; secondNumber = null;
     return outcome
 }
 function divide (x, y) {
     outcome = x / y;
-    firstNumber = outcome; secondNumber = null;
     return outcome
 }
-function displayPopulation(value) {    
-    return displayArea.innerText += value;
+function displayPopulation() {
+    displayArea.innerText = displayValue;
+    if(displayValue.length > 9) {
+        displayArea.innerText = displayValue.substring(0, 9);
+    }
+
+    // displayValue = displayArea.innerText;
+    // displayValue += value;
+    // if(displayValue.length > 9) {
+    //     displayValue = displayValue.substring(0, 9);
+    // }
+    // displayArea.innerText = displayValue;
+    // return displayArea.innerText;
 }
 function operate(operationChoice, firstNumber, secondNumber) {
     switch (operationChoice) {
@@ -51,43 +58,43 @@ function operate(operationChoice, firstNumber, secondNumber) {
         default:
             break;
     }
-    firstNumber = outcome; secondNumber = null;
+    firstNumber = null; secondNumber = null; operationChoice = "";
     return outcome
 }
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (firstNumber !== null && displayCorrection === false) {
-            displayArea.innerText = "";
-            displayCorrection = true;
-        }
-        displayPopulation(button.id);
+        displayPopulation();
+        displayValue += button.id;
+        displayPopulation();
     });
 });
 
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        displayCorrection = false;
         if (firstNumber !== null) {
             secondNumber = parseInt(displayArea.innerText, 10);
             result = operate(operationChoice, firstNumber, secondNumber);
-            displayArea.innerText = result;
+            displayValue = result;
             operationChoice = button.id;
+            displayPopulation();
+            displayValue = "";
         } else {
             operationChoice = button.id;
             firstNumber = parseInt(displayArea.innerText, 10);
-            displayArea.innerText = "";
-        }
+            displayValue = "";
+        };
     });
 });
 
 equalsButton.addEventListener('click', () => {
     secondNumber = parseInt(displayArea.innerText, 10);
     result = operate(operationChoice, firstNumber, secondNumber);
-    displayArea.innerText = result;
+    displayValue = result;
+    displayPopulation();    
 });
 
 clearButton.addEventListener('click', () => {
     firstNumber = null; secondNumber = null; outcome = null;
-    result = null; operationChoice = ""; displayArea.innerText = "";
+    result = null; operationChoice = ""; displayValue = ""; displayArea.innerText = "";
 });
