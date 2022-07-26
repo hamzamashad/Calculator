@@ -91,3 +91,16 @@ button#clear {
     justify-content: space-between;
     align-items: center;
 }
+
+.numbers:active {
+    color: gray;
+}
+.operations:active {
+    background-color: #4949f8;
+}
+#equals:active {
+    background-color: #a84949;
+}
+#clear:active {
+    background-color: rgb(186, 149, 54);
+}
