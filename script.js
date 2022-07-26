@@ -61,7 +61,6 @@ function operate(operationChoice, x, y) {
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        displayPopulation();
         displayValue += button.id;
         displayPopulation();
     });
