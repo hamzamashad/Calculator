@@ -45,8 +45,12 @@ function operate(operationChoice, x, y) {
             outcome = multiply(x, y);
             break;
         case "divide":
-            outcome = divide(x, y);
-            outcome = Math.round(outcome * 100) / 100 ;
+            if (secondNumber === 0) {
+                alert('Nice try!');
+            } else {
+                outcome = divide(x, y);
+                outcome = Math.round(outcome * 100) / 100;    
+            }
             break;
         default:
             break;
