@@ -9,36 +9,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <table id="numbersArea">
-        <tr>
-            <td><button class="numbers" id="1">1</button></td>
-            <td><button class="numbers" id="2">2</button></td>
-            <td><button class="numbers" id="3">3</button></td>
-        </tr>
-        <tr>
-            <td><button class="numbers" id="4">4</button></td>
-            <td><button class="numbers" id="5">5</button></td>
-            <td><button class="numbers" id="6">6</button></td>
-        </tr>
-        <tr>
-            <td><button class="numbers" id="7">7</button></td>
-            <td><button class="numbers" id="8">8</button></td>
-            <td><button class="numbers" id="9">9</button></td>
-        </tr>
-        <tr>
-            <td><button class="numbers" id="0">0</button></td>
-        </tr>
-    </table>
-    <output id="display"></output>
-    <div id="operationsArea">
-        <button class="operations" id="add">Add</button>
-        <button class="operations" id="substract">Substract</button>
-        <button class="operations" id="multiply">Multiply</button>
-        <button class="operations" id="divide">Divide</button>
-    </div>
-    <div id="results">
-        <button id="equals">=</button>
-        <button id="clear">Clear</button>    
-    </div>
+    <main id="calculator">
+        <output id="display"></output>
+        <div id="input">
+            <table id="numbersArea">
+                <tr>
+                    <td><button class="numbers" id="1">1</button></td>
+                    <td><button class="numbers" id="2">2</button></td>
+                    <td><button class="numbers" id="3">3</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers" id="4">4</button></td>
+                    <td><button class="numbers" id="5">5</button></td>
+                    <td><button class="numbers" id="6">6</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers" id="7">7</button></td>
+                    <td><button class="numbers" id="8">8</button></td>
+                    <td><button class="numbers" id="9">9</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numbers" id="0">0</button></td>
+                </tr>
+            </table>
+            <div id="operationsArea">
+                <button class="operations" id="add">+</button>
+                <button class="operations" id="substract">-</button>
+                <button class="operations" id="multiply">×</button>
+                <button class="operations" id="divide">÷</button>
+            </div>
+        </div>
+        <div id="results">
+            <button id="equals">=</button>
+            <button id="clear">AC</button>    
+        </div>
+    </main>
 </body>
 </html>
