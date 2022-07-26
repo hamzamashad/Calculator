@@ -66,7 +66,6 @@ numberButtons.forEach((button) => {
         displayPopulation();
     });
 });
-
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
         if (firstNumber !== null) {
@@ -83,7 +82,6 @@ operationButtons.forEach((button) => {
         }
     });
 });
-
 equalsButton.addEventListener('click', () => {
     if (firstNumber !== null) {
         secondNumber = parseInt(displayArea.innerText, 10);
@@ -96,7 +94,6 @@ equalsButton.addEventListener('click', () => {
         displayValue = "";
     }
 });
-
 clearButton.addEventListener('click', () => {
     firstNumber = null; secondNumber = null; outcome = null;
     result = null; operationChoice = ""; displayValue = ""; displayArea.innerText = "";
