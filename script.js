@@ -32,33 +32,25 @@ function displayPopulation() {
     if(displayValue.length > 9) {
         displayArea.innerText = displayValue.substring(0, 9);
     }
-
-    // displayValue = displayArea.innerText;
-    // displayValue += value;
-    // if(displayValue.length > 9) {
-    //     displayValue = displayValue.substring(0, 9);
-    // }
-    // displayArea.innerText = displayValue;
-    // return displayArea.innerText;
 }
-function operate(operationChoice, firstNumber, secondNumber) {
+function operate(operationChoice, x, y) {
     switch (operationChoice) {
         case "add":
-            outcome = add(firstNumber, secondNumber);
+            outcome = add(x, y);
             break;
         case "substract":
-            outcome = substract(firstNumber, secondNumber);
+            outcome = substract(x, y);
             break;
         case "multiply":
-            outcome = multiply(firstNumber, secondNumber);
+            outcome = multiply(x, y);
             break;
         case "divide":
-            outcome = divide(firstNumber, secondNumber);
+            outcome = divide(x, y);
             break;
         default:
             break;
     }
-    firstNumber = null; secondNumber = null; operationChoice = "";
+    firstNumber = outcome; secondNumber = null; operationChoice = "";
     return outcome
 }
 
