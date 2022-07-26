@@ -75,15 +75,21 @@ operationButtons.forEach((button) => {
             operationChoice = button.id;
             firstNumber = parseInt(displayArea.innerText, 10);
             displayValue = "";
-        };
+        }
     });
 });
 
 equalsButton.addEventListener('click', () => {
-    secondNumber = parseInt(displayArea.innerText, 10);
-    result = operate(operationChoice, firstNumber, secondNumber);
-    displayValue = result;
-    displayPopulation();    
+    if (firstNumber !== null) {
+        secondNumber = parseInt(displayArea.innerText, 10);
+        result = operate(operationChoice, firstNumber, secondNumber);
+        displayValue = result;
+        displayPopulation();
+        displayValue = "";
+    } else {
+        firstNumber = parseInt(displayArea.innerText, 10);
+        displayValue = "";
+    }
 });
 
 clearButton.addEventListener('click', () => {
