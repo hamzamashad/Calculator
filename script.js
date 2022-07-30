@@ -11,6 +11,10 @@ result = null,
 operationChoice = "",
 displayValue = "";
 
+function clearScreen() {
+    firstNumber = null; secondNumber = null; outcome = null;
+    result = null; operationChoice = ""; displayValue = ""; displayArea.innerText = "";
+}
 function add(x, y) {
     outcome = x + y;
     return outcome
@@ -47,6 +51,7 @@ function operate(operationChoice, x, y) {
         case "divide":
             if (secondNumber === 0) {
                 alert('Nice try!');
+                clearScreen();
             } else {
                 outcome = divide(x, y);
                 outcome = Math.round(outcome * 100) / 100;    
@@ -93,10 +98,7 @@ equalsButton.addEventListener('click', () => {
         displayValue = "";
     }
 });
-clearButton.addEventListener('click', () => {
-    firstNumber = null; secondNumber = null; outcome = null;
-    result = null; operationChoice = ""; displayValue = ""; displayArea.innerText = "";
-});
+clearButton.addEventListener('click', clearScreen);
 
 document.addEventListener('keypress', (event) => {
     const keyName = event.key;
