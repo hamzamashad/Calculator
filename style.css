@@ -82,7 +82,7 @@ button#clear {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    row-gap: 6px;
+    row-gap: 2px;
     margin-right: 5px;
 }
 #input #numbersArea tbody{
@@ -90,6 +90,7 @@ button#clear {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* row-gap: 6px; */
 }
 
 #numbersArea tr {
