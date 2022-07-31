@@ -101,8 +101,7 @@ equalsButton.addEventListener('click', () => {
         displayPopulation();
         displayValue = "";
     } else {
-        firstNumber = parseFloat(displayArea.innerText, 10);
-        displayValue = "";
+        return
     }
 });
 clearButton.addEventListener('click', clearScreen);
