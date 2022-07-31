@@ -66,7 +66,11 @@ function operate(operationChoice, x, y) {
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        displayValue += button.id;
+        if (displayValue === '0') {
+            displayValue = button.id
+          } else {
+            displayValue += button.id;
+        }
         displayPopulation();
     });
 });
