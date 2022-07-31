@@ -108,74 +108,19 @@ clearButton.addEventListener('click', clearScreen);
 
 document.addEventListener('keypress', (event) => {
     const keyName = event.key;
-    if (keyName == '1' || keyName == '2' || keyName == '3' || keyName == '4' || keyName == '5' || keyName == '6' || keyName == '7' || keyName == '8' || keyName == '9' || keyName == '0') {
-        displayValue += keyName;
-        displayPopulation();
+    if (keyName == '1' || keyName == '2' || keyName == '3' || keyName == '4' || keyName == '5' || keyName == '6' || keyName == '7' || keyName == '8' || keyName == '9' || keyName == '0' || keyName == '.') {
+        document.getElementById(keyName).click();
     } else if (keyName == '+') {
-        if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
-            result = operate(operationChoice, firstNumber, secondNumber);
-            displayValue = result;
-            operationChoice = "add";
-            displayPopulation();
-            displayValue = "";
-        } else {
-            operationChoice = "add";
-            firstNumber = parseInt(displayArea.innerText, 10);
-            displayValue = "";
-        }
+        document.getElementById("add").click();
     } else if (keyName == '-') {
-        if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
-            result = operate(operationChoice, firstNumber, secondNumber);
-            displayValue = result;
-            operationChoice = "substract";
-            displayPopulation();
-            displayValue = "";
-        } else {
-            operationChoice = "substract";
-            firstNumber = parseInt(displayArea.innerText, 10);
-            displayValue = "";
-        }
+        document.getElementById("substract").click();
     } else if (keyName == '*') {
-        if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
-            result = operate(operationChoice, firstNumber, secondNumber);
-            displayValue = result;
-            operationChoice = "multiply";
-            displayPopulation();
-            displayValue = "";
-        } else {
-            operationChoice = "multiply";
-            firstNumber = parseInt(displayArea.innerText, 10);
-            displayValue = "";
-        }
+        document.getElementById("multiply").click();
     } else if (keyName == '/') {
-        if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
-            result = operate(operationChoice, firstNumber, secondNumber);
-            displayValue = result;
-            operationChoice = "divide";
-            displayPopulation();
-            displayValue = "";
-        } else {
-            operationChoice = "divide";
-            firstNumber = parseInt(displayArea.innerText, 10);
-            displayValue = "";
-        }
+        document.getElementById("divide").click();
     } else if (keyName == 'Enter') {
-        if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
-            result = operate(operationChoice, firstNumber, secondNumber);
-            displayValue = result;
-            displayPopulation();
-            displayValue = "";
-        } else {
-            firstNumber = parseInt(displayArea.innerText, 10);
-            displayValue = "";
-        }
+        document.getElementById("equals").click();
     } else if (keyName == 'c') {
-        firstNumber = null; secondNumber = null; outcome = null;
-        result = null; operationChoice = ""; displayValue = ""; displayArea.innerText = "";
+        document.getElementById("clear").click();
     }
 }, false);
