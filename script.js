@@ -60,7 +60,7 @@ function operate(operationChoice, x, y) {
         default:
             break;
     }
-    firstNumber = outcome; secondNumber = null; operationChoice = "";
+    firstNumber = null; secondNumber = null; operationChoice = "";
     return outcome
 }
 
@@ -85,6 +85,7 @@ operationButtons.forEach((button) => {
             displayValue = result;
             operationChoice = button.id;
             displayPopulation();
+            firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
         } else {
             operationChoice = button.id;
