@@ -66,6 +66,9 @@ function operate(operationChoice, x, y) {
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
+        if (button.id === '.' && displayArea.innerText.includes('.')) {
+            return
+        }
         if (displayValue === '0') {
             displayValue = button.id
           } else {
@@ -77,7 +80,7 @@ numberButtons.forEach((button) => {
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
         if (firstNumber !== null) {
-            secondNumber = parseInt(displayArea.innerText, 10);
+            secondNumber = parseFloat(displayArea.innerText);
             result = operate(operationChoice, firstNumber, secondNumber);
             displayValue = result;
             operationChoice = button.id;
@@ -85,20 +88,20 @@ operationButtons.forEach((button) => {
             displayValue = "";
         } else {
             operationChoice = button.id;
-            firstNumber = parseInt(displayArea.innerText, 10);
+            firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
         }
     });
 });
 equalsButton.addEventListener('click', () => {
     if (firstNumber !== null) {
-        secondNumber = parseInt(displayArea.innerText, 10);
+        secondNumber = parseFloat(displayArea.innerText);
         result = operate(operationChoice, firstNumber, secondNumber);
         displayValue = result;
         displayPopulation();
         displayValue = "";
     } else {
-        firstNumber = parseInt(displayArea.innerText, 10);
+        firstNumber = parseFloat(displayArea.innerText, 10);
         displayValue = "";
     }
 });
