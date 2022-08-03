@@ -9,7 +9,8 @@ secondNumber = null,
 outcome = null,
 result = null,
 operationChoice = "",
-displayValue = "";
+displayValue = "",
+didNum = false;
 
 function clearScreen() {
     firstNumber = null; secondNumber = null; outcome = null;
@@ -61,6 +62,7 @@ function operate(operationChoice, x, y) {
             break;
     }
     firstNumber = null; secondNumber = null; operationChoice = "";
+    didNum = false;
     return outcome
 }
 
@@ -75,11 +77,12 @@ numberButtons.forEach((button) => {
             displayValue += button.id;
         }
         displayPopulation();
+        didNum = true;
     });
 });
 operationButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (firstNumber !== null) {
+        if (firstNumber !== null && didNum == true) {
             secondNumber = parseFloat(displayArea.innerText);
             result = operate(operationChoice, firstNumber, secondNumber);
             displayValue = result;
@@ -87,7 +90,7 @@ operationButtons.forEach((button) => {
             displayPopulation();
             firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
-        } else {
+        } else if (didNum == true){
             operationChoice = button.id;
             firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
