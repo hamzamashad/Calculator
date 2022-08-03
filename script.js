@@ -90,7 +90,7 @@ operationButtons.forEach((button) => {
             displayPopulation();
             firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
-        } else if (didNum == true){
+        } else if (didNum == true) {
             operationChoice = button.id;
             firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
