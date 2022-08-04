@@ -94,15 +94,18 @@ operationButtons.forEach((button) => {
             operationChoice = button.id;
             firstNumber = parseFloat(displayArea.innerText);
             displayValue = "";
+        } else {
+            operationChoice = button.id;
         }
     });
 });
 equalsButton.addEventListener('click', () => {
-    if (firstNumber !== null) {
+    if (firstNumber !== null && didNum == true) {
         secondNumber = parseFloat(displayArea.innerText);
         result = operate(operationChoice, firstNumber, secondNumber);
         displayValue = result;
         displayPopulation();
+        firstNumber = parseFloat(displayArea.innerText);
         displayValue = "";
     } else {
         return
